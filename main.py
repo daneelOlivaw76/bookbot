@@ -28,9 +28,11 @@ def count_chars(text):
     return char_count
 
 def print_report(book_path, char_count):
+    sorted_dict = dict(sorted(char_count.items()))
     print(f"--- Begin report of {book_path} ---")
-    for item in char_count:
-        print(f"The {repr(item)} character was found {char_count[item]} times.")
+    for item in sorted_dict:
+        if(item.isalpha()):
+            print(f"The {repr(item)} character was found {char_count[item]} times.")
 
     print(f"--- End report ---")
 
