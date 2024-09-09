@@ -30,7 +30,7 @@ def count_chars(text):
 def print_report(book_path, char_count):
     print(f"--- Begin report of {book_path} ---")
     for item in char_count:
-        print(f"the {repr(item)} character was found {char_count[item]} times.")
+        print(f"The {repr(item)} character was found {char_count[item]} times.")
 
     print(f"--- End report ---")
 
