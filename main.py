@@ -1,31 +1,20 @@
 import string
 
+from stats import count_words
+from stats import count_chars
 
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
-    #word_wount = count_words(text)
+    word_count = count_words(text)
+    print(f"Found {word_count} total words")
     char_count = count_chars(text)
-    #print(char_count)
+    print(char_count)
     print_report(book_path, char_count)
-
-def count_words(text):
-    words = text.split()
-    return len(words)
 
 def get_book_text(path):
     with open(path) as f:
         return f.read() 
-    
-def count_chars(text):
-    char_count = {}
-    for c in text:
-        low = c.lower()
-        if low in char_count:
-            char_count[low] += 1
-        else:
-            char_count[low] = 1
-    return char_count
 
 def print_report(book_path, char_count):
     sorted_dict = dict(sorted(char_count.items()))
